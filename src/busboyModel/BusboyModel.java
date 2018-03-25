@@ -1,4 +1,4 @@
-package model;
+package busboyModel;
 
 public class BusboyModel {
 
