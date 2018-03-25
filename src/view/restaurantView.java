@@ -1,4 +1,4 @@
-package restaurant;
+package view;
 
 public class restaurantView {
 
