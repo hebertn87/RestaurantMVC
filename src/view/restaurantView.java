@@ -131,13 +131,12 @@ public class RestaurantView implements Observer {
 	        JTextArea textArea;
 	        JScrollPane jScrollPanel;
 	        
-	        textArea = new JTextArea();
-	        //textArea.setColumns(1);
-	        //textArea.setWrapStyleWord(true);
+	        textArea = new JTextArea("History Log:");
+	        textArea.setColumns(20);
 	        c.gridx = 6;
 	        c.gridy = 0;
 	        c.gridheight = 5;
-	        c.gridwidth = 1;
+	        c.gridwidth = GridBagConstraints.RELATIVE;
 	        jScrollPanel = new JScrollPane(textArea);
 	        
 	        pane.add(textArea,c);
