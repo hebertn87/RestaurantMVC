@@ -1,9 +1,9 @@
 package busboyModel;
 
 public interface BusboyState {
-	public void offShift();
-	public void backroom();
-	public void cleaning();
+	public void GoOffShift();
+	public void CleanBackroom();
+	public void CleanTable();
 	
 	public void exeption();
 }
