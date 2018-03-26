@@ -1,9 +1,11 @@
+//Nathan Hebert 3/25/2018
 package tableModel;
 
 public class NeedsCleaning implements TableState {
 
 	TableModel table;
 	
+	//Constructor
 	public NeedsCleaning(TableModel _table) {
 		this.table = _table;
 	}
