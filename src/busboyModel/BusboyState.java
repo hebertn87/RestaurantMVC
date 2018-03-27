@@ -2,7 +2,7 @@
 package busboyModel;
 
 //Interface for the busboy states
-public interface BusboyState {
+public interface BusboyState extends Runnable{
 	public void GoOffShift();
 	public void CleanBackroom();
 	public void CleanTable();

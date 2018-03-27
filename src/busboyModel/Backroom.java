@@ -32,4 +32,22 @@ public class Backroom implements BusboyState {
 		System.out.println("Error");
 	}
 
+	@Override
+	public void run() {
+		boolean busBoyNothingToDoButCleanKitchen = true;
+		while(busBoyNothingToDoButCleanKitchen) {
+			System.out.println("Bus boy is cleaning kitchen");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!busboy.tablesToClean.isEmpty()) {
+				busBoyNothingToDoButCleanKitchen = false;
+				busboy.setState(busboy.GetCleaning());
+			}
+		}
+	}
+
 }

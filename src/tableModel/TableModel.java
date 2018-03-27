@@ -1,7 +1,10 @@
 //Nathan Hebert 3/25/2018
 package tableModel;
 
-public class TableModel {
+import java.util.Observable;
+import java.util.Observer;
+
+public class TableModel extends Observable implements Observer {
 	
 	TableState ready;
 	TableState inUse;
@@ -67,6 +70,21 @@ public class TableModel {
 	//Returns being cleaned
 	public TableState GetBeingCleaned() {
 		return beingCleaned;
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		//If busboy
+				if(arg1.toString().equals("BusBoyStateNotify"))
+						this.getState().toString();
+				//If from user
+				else {
+					if(state.toString().equals("ReadyTable"))
+						state.IsReady();
+					else if(state.toString().equals("InUseTable"))
+						state.IsInUse();
+				}
+		
 	}
 	
 }

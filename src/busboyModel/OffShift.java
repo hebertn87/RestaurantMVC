@@ -31,5 +31,12 @@ public class OffShift implements BusboyState {
 		public void exeption() {
 			System.out.println("Error.");
 		}
+		
+		@Override
+		public void run() {
+			//Do nothing, off shift
+			System.out.println("Busboy got called into work");
+			busboy.setState(busboy.GetCleaning());
+		}
 
 }

@@ -2,6 +2,7 @@
 //This is the Cleaning state for the busboy model
 package busboyModel;
 
+
 public class Cleaning implements BusboyState {
 
 	BusboyModel busboy;
@@ -31,7 +32,26 @@ public class Cleaning implements BusboyState {
 	public void exeption() {
 		System.out.println("Error.");
 	}
-	
-	
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public void run() {
+		boolean cleaningTables = true;
+		while(cleaningTables) {
+			System.out.println("Bus boy is cleaning table");
+			try {
+				Thread.sleep(30000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("Table cleaned");
+			busboy.notifyObservers(busboy.tablesToClean.poll());
+			if(busboy.tablesToClean.isEmpty()) {
+				cleaningTables = false;
+				busboy.setState(busboy.GetBackroom());
+			}
+		}
+	}
 
 }
